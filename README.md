@@ -4,7 +4,7 @@ Execute um arquivo Python. Avance linha por linha. Veja a memória.
 
 ```
 ┌────┬───┐     ┌────┬───┐     ┌────┬───┐
-│ 1  │ ●─┼────▶│ 2  │ ●─┼────▶│ 3  │ ∅ │
+│  1 │ ●─┼────▶│  2 │ ●─┼────▶│  3 │ ∅ │
 └────┴───┘     └────┴───┘     └────┴───┘
 ```
 
@@ -269,7 +269,7 @@ executar é `novo.prox = cabeca`:
 │    5                                                             ││  lista encadeada · No                                        │
 │    6                                                             ││                                                              │
 │    7 def inserir_no_inicio(cabeca, valor):                       ││  ┌────┬───┐                                                  │
-│    8     novo = No(valor)                                        ││  │ 3  │ ∅ │                                                  │
+│    8     novo = No(valor)                                        ││  │  3 │ ∅ │                                                  │
 │ ❱  9     novo.prox = cabeca                                      ││  └────┴───┘                                                  │
 │   10     return novo                                             ││   @ee70                                                      │
 │   11                                                             ││   prox=None                                                  │
@@ -277,7 +277,7 @@ executar é `novo.prox = cabeca`:
 │   13 lista = None                                                ││                                                              │
 │                                                                  ││  soltos (a cadeia acima não os alcança):                     │
 ╰───────────────────────────────────────── vai executar a linha 9 ─╯│  ┌────┬───┐                                                  │
-╭─ memória ────────────────────────────────────────────────────────╮│  │ 2  │ ∅ │                                                  │
+╭─ memória ────────────────────────────────────────────────────────╮│  │  2 │ ∅ │                                                  │
 │ pilha de chamadas                                                ││  └────┴───┘                                                  │
 │   <module>()  linha 15                                           ││   @f4a0                                                      │
 │ ▶   inserir_no_inicio()  linha 9                                 ││   prox=None                                                  │
@@ -319,7 +319,7 @@ passou a apontar para o nó 3. A seta nova aparece em verde:
 lista encadeada · No
 
 ┌────┬───┐     ┌────┬───┐
-│ 2  │ ●─┼────▶│ 3  │ ∅ │
+│  2 │ ●─┼────▶│  3 │ ∅ │
 └────┴───┘     └────┴───┘
  @f4a0          @ee70
  prox=@ee70     prox=None
@@ -332,7 +332,7 @@ No último passo (36), a lista está completa e a saída mostra `pronto!`:
 lista encadeada · No
 
 ┌────┬───┐     ┌────┬───┐     ┌────┬───┐
-│ 1  │ ●─┼────▶│ 2  │ ●─┼────▶│ 3  │ ∅ │
+│  1 │ ●─┼────▶│  2 │ ●─┼────▶│  3 │ ∅ │
 └────┴───┘     └────┴───┘     └────┴───┘
  @b9b0          @f4a0          @ee70
  prox=@f4a0     prox=@ee70     prox=None
