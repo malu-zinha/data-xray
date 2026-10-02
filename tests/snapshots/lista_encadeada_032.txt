@@ -1,7 +1,7 @@
 lista encadeada · No
 
 ┌────┬───┐
-│ 7  │ ∅ │
+│  7 │ ∅ │
 └────┴───┘
  @····
  prox=None
@@ -9,7 +9,7 @@ lista encadeada · No
 
 soltos (a cadeia acima não os alcança):
 ┌────┬───┐
-│ 3  │ ∅ │
+│  3 │ ∅ │
 └────┴───┘
  @····
  prox=None

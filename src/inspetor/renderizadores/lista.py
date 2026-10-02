@@ -3,7 +3,7 @@
 Os nomes dos campos são parâmetros; eles vêm da detecção.
 """
 from inspetor.nucleo.canvas import Canvas
-from inspetor.renderizadores.comum import nomes_por_endereco, titulo
+from inspetor.renderizadores.comum import centralizar, nomes_por_endereco, titulo
 
 SEM_ATRIBUTO = object()                   # marca "o atributo ainda não existe"
 LARGURA_NO = 15                           # caixa (10) + seta (5): distância entre nós
@@ -14,7 +14,7 @@ def caixa_no(cv, lin, col, no, passo, nomes, tag, tag_seta, valor="valor", prox=
     borda = "novo" if tag == "novo" else "fraco"
     cv.escrever(lin, col, "┌────┬───┐", borda)
     cv.escrever(lin + 1, col, "│", borda)
-    cv.escrever(lin + 1, col + 1, f"{str(getattr(no, valor, '?')):^4}", tag)
+    cv.escrever(lin + 1, col + 1, centralizar(str(getattr(no, valor, '?')), 4), tag)
     cv.escrever(lin + 1, col + 5, "│", borda)
     seguinte = getattr(no, prox, SEM_ATRIBUTO)
     if seguinte is SEM_ATRIBUTO:          # __init__ ainda não criou o campo

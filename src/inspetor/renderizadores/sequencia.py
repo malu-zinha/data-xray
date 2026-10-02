@@ -7,7 +7,7 @@
        ▲ ini       ▲ fim
 """
 from inspetor.nucleo.canvas import Canvas
-from inspetor.renderizadores.comum import nomes_por_endereco, texto, titulo
+from inspetor.renderizadores.comum import centralizar, nomes_por_endereco, texto, titulo
 
 
 
@@ -20,7 +20,7 @@ def vetor(cv, lin, col, textos, tags, largura=5):
         c = col + i * passo
         cv.escrever(lin, c + 1 + largura // 2, str(i), "fraco")   # índice em cima
         cv.escrever(lin + 2, c, "│", "fraco")
-        cv.escrever(lin + 2, c + 1, f"{texto:^{largura}}", tag)
+        cv.escrever(lin + 2, c + 1, centralizar(texto, largura), tag)
     cv.escrever(lin + 2, col + len(textos) * passo, "│", "fraco")
 
 

@@ -21,6 +21,7 @@ from dataclasses import dataclass, field
 from inspetor.nucleo.canvas import Canvas
 from inspetor.nucleo.diferenca import GLOBAIS, Destaques, conteudo
 from inspetor.nucleo.memoria import resumo_do_heap
+from inspetor.renderizadores.comum import centralizar
 
 MAX_OBJETOS = 60        # a partir daqui, objetos não são desenhados
 MAX_ITENS = 12          # itens por lista/dicionário/objeto
@@ -237,10 +238,10 @@ def _escrever_caixa(cv, c, d):
         for i, (texto, w) in enumerate(zip(c.celulas, larguras)):
             cv.escrever(c.y + 2, col, "│", "fraco")
             chave = c.chaves_celulas[i] if i < len(c.chaves_celulas or []) else None
-            cv.escrever(c.y + 2, col + 1, texto.center(w),
+            cv.escrever(c.y + 2, col + 1, centralizar(texto, w),
                         "novo" if d.mudou(c.dono, chave) else "normal")
             if texto != "…" and c.com_indices:
-                cv.escrever(c.y + 4, col + 1, str(i).center(w), "fraco")   # índice
+                cv.escrever(c.y + 4, col + 1, centralizar(str(i), w), "fraco")   # índice
             col += w + 1
         cv.escrever(c.y + 2, col, "│", "fraco")
         return

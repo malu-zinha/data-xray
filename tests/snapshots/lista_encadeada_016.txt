@@ -1,7 +1,7 @@
 lista encadeada · No
 
 ┌────┬───┐
-│ ?  │ ? │
+│  ? │ ? │
 └────┴───┘
  @····
  prox não existe

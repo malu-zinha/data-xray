@@ -1,12 +1,13 @@
 """Array: células lado a lado com o índice embaixo.
 
-    ┌────┬────┬────┐
-    │ 5  │ 2  │ 9  │
-    └────┴────┴────┘
-      0    1    2
+    ┌─────┬─────┬─────┐
+    │  5  │  2  │  9  │
+    └─────┴─────┴─────┘
+       0     1     2
 """
 from inspetor.nucleo.canvas import Canvas
-from inspetor.renderizadores.comum import indices_do_topo, nomes_por_endereco, texto, titulo
+from inspetor.renderizadores.comum import (centralizar, indices_do_topo, largura_de_celula,
+                                           nomes_por_endereco, texto, titulo)
 
 
 
@@ -21,8 +22,8 @@ def celulas(cv, lin, col, textos, tags, largura=4):
     for i, (texto, tag) in enumerate(zip(textos, tags)):
         c = col + i * (largura + 1)
         cv.escrever(lin + 1, c, "│", "fraco")                 # parede da célula
-        cv.escrever(lin + 1, c + 1, f"{texto:^{largura}}", tag)   # valor centralizado
-        cv.escrever(lin + 3, c + 1, f"{i:^{largura}}", "fraco")   # índice embaixo
+        cv.escrever(lin + 1, c + 1, centralizar(texto, largura), tag)
+        cv.escrever(lin + 3, c + 1, centralizar(str(i), largura), "fraco")   # índice embaixo
         centros.append(c + 1 + largura // 2)
     cv.escrever(lin + 1, col + len(textos) * (largura + 1), "│", "fraco")
     return centros
@@ -40,7 +41,7 @@ def desenhar_estrutura(passo, est, d):
     """
     itens = [r[1] for r in passo.heap[est.raiz]["itens"]]
     textos = [texto(x) for x in itens[:MAX_CELULAS]]
-    largura = max(4, max(len(t) for t in textos) + 2)
+    largura = largura_de_celula(textos, 4)
     marcados = indices_do_topo(passo, len(textos))
     cv = Canvas()
     titulo(cv, "array", nomes_por_endereco(passo, so_topo=False).get(est.raiz, []))
