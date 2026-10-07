@@ -2,10 +2,9 @@
 
 Visualizador de execução Python no terminal. O produto se chama **xray**:
 comando `xray`, pacote `src/xray/`, projeto `xray` no `pyproject.toml`.
-Nomes antigos (`vized`, `inspect`, `inspetor`) não devem voltar. O
-repositório ainda se chama `data-visualizer` e vai virar `data-xray`;
-quando isso acontecer, atualizar a URL do `git clone` e os caminhos de
-pasta no README.
+Nomes antigos (`vized`, `inspect`, `inspetor`, `data-visualizer`) não
+devem voltar. O repositório é `malu-zinha/data-xray`, clonado em
+`~/projetos/data-visualizer-repo/data-xray`.
 
 ## Commits
 
