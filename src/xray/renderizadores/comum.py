@@ -78,5 +78,6 @@ def titulo(cv, forma, nomes=(), detalhe=""):
     if detalhe:
         pedacos.append((f" · {detalhe}", "fraco"))
     if nomes:
-        pedacos.append(("  ← " + ", ".join(nomes), "foco"))
+        pedacos.append(("  ", "normal"))           # espaço fora do realce
+        pedacos.append(("← " + ", ".join(nomes), "foco"))
     cv.trechos(0, 0, pedacos)
