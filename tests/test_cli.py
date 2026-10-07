@@ -1,4 +1,4 @@
-"""`inspect arquivo.py`: rastrear um programa qualquer (etapa 1 do ROADMAP)."""
+"""`xray arquivo.py`: rastrear um programa qualquer (etapa 1 do ROADMAP)."""
 import asyncio
 from pathlib import Path
 
@@ -136,5 +136,5 @@ def test_atalho_pelo_nome_do_exemplo(monkeypatch):
     monkeypatch.setattr("xray.interface.app_textual.VisualizadorApp.run",
                         lambda self: abertos.append(self.cenarios))
     from xray.cli import main
-    main(["avl"])                                # = inspect exemplos/avl.py
+    main(["avl"])                                # = xray exemplos/avl.py
     assert [c.nome for c in abertos[0]] == ["avl.py"]
