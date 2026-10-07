@@ -1,6 +1,6 @@
 """Grafo (matriz e lista de adjacência) e BFS.
 
-Rode com:  inspect exemplos/grafo.py
+Rode com:  xray exemplos/grafo.py
 """
 from collections import deque
 

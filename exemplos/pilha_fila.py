@@ -1,6 +1,6 @@
 """Pilha sobre lista e fila circular sobre vetor.
 
-Rode com:  inspect exemplos/pilha_fila.py
+Rode com:  xray exemplos/pilha_fila.py
 """
 
 

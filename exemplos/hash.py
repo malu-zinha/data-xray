@@ -1,6 +1,6 @@
 """Tabela hash com encadeamento separado.
 
-Rode com:  inspect exemplos/hash.py
+Rode com:  xray exemplos/hash.py
 """
 
 

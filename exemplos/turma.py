@@ -1,6 +1,6 @@
 """Dicionário de listas de objetos.
 
-Rode com:  inspect exemplos/turma.py
+Rode com:  xray exemplos/turma.py
 """
 
 

@@ -1,6 +1,6 @@
 """Ordenação por bolha.
 
-Rode com:  inspect exemplos/bubble.py
+Rode com:  xray exemplos/bubble.py
 """
 
 

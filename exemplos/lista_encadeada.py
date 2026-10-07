@@ -1,6 +1,6 @@
 """Lista encadeada simples.
 
-Rode com:  inspect exemplos/lista_encadeada.py
+Rode com:  xray exemplos/lista_encadeada.py
 """
 
 

@@ -4,7 +4,7 @@ A classe abaixo é a resposta como se cola no LeetCode. Sozinha ela não
 roda nada: o LeetCode chama o método por fora. Aqui, as últimas linhas
 fazem essa chamada, e é a partir delas que o visualizador acompanha.
 
-Rode com:  inspect exemplos/twosum.py
+Rode com:  xray exemplos/twosum.py
 """
 
 
