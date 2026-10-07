@@ -8,4 +8,4 @@ Não usa o rastreador: mostra um instante fixo de cada estrutura.
     python v2_rich.py            # rich (--animar usa rich.live)
     python v4_curses.py          # curses (Windows: pip install windows-curses)
 
-A versão com textual evoluiu para o pacote `xray` (comando `inspect`) na raiz do repositório.
+A versão com textual evoluiu para o pacote `xray` (comando `xray`) na raiz do repositório.

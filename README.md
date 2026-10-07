@@ -1,4 +1,4 @@
-# inspect
+# xray
 
 Execute um arquivo Python. Avance linha por linha. Veja a memória.
 
@@ -92,7 +92,7 @@ Uma vez só.
 7. Teste com um dos exemplos que vêm no projeto:
 
    ```bash
-   inspect exemplos/bubble.py
+   xray exemplos/bubble.py
    ```
 
    A tela do visualizador abre. Aperte `n` algumas vezes para avançar e
@@ -226,13 +226,13 @@ O exemplo completo está em `exemplos/twosum.py`.
 2. Execute com o visualizador. Com o ambiente virtual ativado:
 
    ```bash
-   inspect meu_programa.py
+   xray meu_programa.py
    ```
 
    Se o arquivo estiver em outra pasta, passe o caminho completo:
 
    ```bash
-   inspect /Users/seu_usuario/Documentos/aula/exercicio.py
+   xray /Users/seu_usuario/Documentos/aula/exercicio.py
    ```
 
    No macOS, dá para arrastar o arquivo do Finder para dentro da janela
@@ -377,7 +377,7 @@ campos não importa (`prox`, `next`, `esq`, `left`...).
   executados, mas as linhas deles não são mostradas.
 - **Limite de 2000 passos.** Depois disso a gravação para e a barra de
   baixo avisa. Laços infinitos também param aí. Para mudar:
-  `inspect meu_programa.py --max-passos 5000`. Prefira entradas pequenas
+  `xray meu_programa.py --max-passos 5000`. Prefira entradas pequenas
   (5 a 10 elementos): cada volta de laço gera vários passos.
 - **Erros no programa:** a gravação vai até a linha do erro, e a mensagem
   aparece na barra de baixo.
@@ -395,9 +395,9 @@ campos não importa (`prox`, `next`, `esq`, `left`...).
 Ficam na pasta `exemplos/`.
 
 ```bash
-inspect                          # abre todos, um por aba (← → troca de aba)
-inspect exemplos/avl.py          # abre um só
-inspect avl                      # o mesmo, pelo nome
+xray                             # abre todos, um por aba (← → troca de aba)
+xray exemplos/avl.py             # abre um só
+xray avl                         # o mesmo, pelo nome
 ```
 
 | Arquivo | Conteúdo |
@@ -416,7 +416,8 @@ inspect avl                      # o mesmo, pelo nome
 
 | Problema | Solução |
 |---|---|
-| `command not found: inspect` | O ambiente virtual não está ativado. Entre na pasta do projeto e rode `source .venv/bin/activate`. |
+| `command not found: xray` | O ambiente virtual não está ativado. Entre na pasta do projeto e rode `source .venv/bin/activate`. |
+| `command not found: xray`, mas o comando `inspect` funciona | O projeto foi instalado antes de mudar de nome. Com o ambiente virtual ativado, rode `pip install -e .` de novo. |
 | `No such file or directory` / `arquivo não encontrado` | O caminho do arquivo está errado. Confira com `ls` se o arquivo está na pasta atual, ou use o caminho completo. |
 | Tela espremida ou cortada | Aumente a janela do terminal (130 colunas ou mais) ou diminua a fonte (`Cmd -` no macOS). |
 | Barra de baixo diz "parou no limite de passos" | Use uma entrada menor ou aumente o limite com `--max-passos`. |
@@ -432,7 +433,7 @@ Instalação com as ferramentas de teste:
 ```bash
 pip install -e ".[dev]"
 pytest                                            # todos os testes
-INSPECT_ATUALIZAR=1 pytest tests/test_desenhos.py   # regrava os desenhos esperados (só após mudança intencional)
+XRAY_ATUALIZAR=1 pytest tests/test_desenhos.py      # regrava os desenhos esperados (só após mudança intencional)
 ```
 
 Os testes em `tests/test_desenhos.py` executam cada arquivo de `exemplos/`

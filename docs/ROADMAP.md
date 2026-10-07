@@ -5,7 +5,7 @@ valores (`raiz`, `13`, `fila`...). Com código qualquer, nada disso é conhecido
 de antemão. O fluxo alvo é:
 
 ```
-inspect meu_programa.py
+xray meu_programa.py
   → rastrear         executa o arquivo e grava cada linha
   → achatar          memória → grafo {endereço: descrição rasa}
   → detectar forma   lista? árvore? grafo? matriz? array?
@@ -20,16 +20,16 @@ fluxo genérico deve mostrar a rotação tão bem quanto `estruturas/avl/cenario
 
 ## Etapa 1 — linha de comando para um arquivo qualquer ✅
 
-- `src/xray/cli.py`: `inspect caminho/programa.py` executa o arquivo com
+- `src/xray/cli.py`: `xray caminho/programa.py` executa o arquivo com
   `runpy.run_path` sob o rastreador.
 - O filtro do rastreador passa a aceitar **o arquivo da usuária** (e, depois,
   módulos locais importados por ele), em vez de `estruturas/*/codigo.py`.
 - Gravar também as **variáveis globais** do módulo (`frame.f_globals` do
   frame do arquivo), filtrando módulos, funções e classes.
 - Limite de passos configurável (ex.: `--max-passos 2000`) para laços longos.
-- `inspect` sem argumentos continua abrindo os cenários atuais.
+- `xray` sem argumentos continua abrindo os cenários atuais.
 
-Pronto quando: `inspect exemplos/bubble.py` mostra o código e o painel de
+Pronto quando: `xray exemplos/bubble.py` mostra o código e o painel de
 memória (mesmo sem desenho especializado).
 
 ## Etapa 2 — snapshot como heap achatado (substitui o deepcopy) ✅
@@ -157,7 +157,7 @@ nenhuma snapshot foi regravada; `tests/test_diferenca.py` verifica as tags.
 - `tests/test_desenhos.py` passa a rodar os exemplos pelo fluxo genérico.
 - Quando o genérico cobrir todos os exemplos, `estruturas/` pode sair.
 
-Como ficou: `inspect` sem argumentos abre os `exemplos/` como abas (`inspect avl`
+Como ficou: `xray` sem argumentos abre os `exemplos/` como abas (`xray avl`
 é atalho para `exemplos/avl.py`); `estruturas/`, `nucleo/layout.py` e o
 filtro de `codigo.py` saíram. As snapshots dos cenários à mão foram
 substituídas pelas do fluxo completo sobre os exemplos (regravação
