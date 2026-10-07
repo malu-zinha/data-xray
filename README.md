@@ -56,14 +56,14 @@ Uma vez só.
    computador, baixe e entre na pasta:
 
    ```bash
-   git clone https://github.com/malu-zinha/data-visualizer.git
-   cd data-visualizer
+   git clone https://github.com/malu-zinha/data-xray.git
+   cd data-xray
    ```
 
    Se já tem, só entre na pasta dele. Por exemplo:
 
    ```bash
-   cd ~/projetos/data-visualizer-repo/data-visualizer
+   cd ~/projetos/data-visualizer-repo/data-xray
    ```
 
    A partir daqui, todos os comandos são digitados **dentro dessa pasta**.
@@ -103,7 +103,7 @@ Uma vez só.
 O ambiente virtual precisa ser ativado de novo em cada janela de terminal:
 
 ```bash
-cd ~/projetos/data-visualizer-repo/data-visualizer    # a pasta do projeto
+cd ~/projetos/data-visualizer-repo/data-xray         # a pasta do projeto
 source .venv/bin/activate                            # Windows: .venv\Scripts\activate
 ```
 
