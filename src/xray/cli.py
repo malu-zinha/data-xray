@@ -1,10 +1,10 @@
-"""Linha de comando: `inspect programa.py` rastreia um arquivo; `inspect` abre os exemplos.
+"""Linha de comando: `xray programa.py` rastreia um arquivo; `xray` abre os exemplos.
 
 Uso:
-    inspect                               # os exemplos de exemplos/, uma aba cada
-    inspect exemplos/bubble.py            # qualquer arquivo Python
-    inspect avl                           # atalho para exemplos/avl.py
-    inspect exemplos/bubble.py --max-passos 500
+    xray                                  # os exemplos de exemplos/, uma aba cada
+    xray exemplos/bubble.py               # qualquer arquivo Python
+    xray avl                              # atalho para exemplos/avl.py
+    xray exemplos/bubble.py --max-passos 500
 """
 import argparse
 import os
@@ -79,7 +79,7 @@ def cenarios_dos_exemplos(max_passos=MAX_PASSOS):
 
 def main(argv=None):
     parser = argparse.ArgumentParser(
-        prog="inspect",
+        prog="xray",
         description="Mostra no terminal, passo a passo, o código rodando e a memória.")
     parser.add_argument("arquivo", nargs="?",
                         help="programa Python a visualizar, ou o nome de um exemplo "
@@ -93,14 +93,14 @@ def main(argv=None):
         cenarios = cenarios_dos_exemplos(args.max_passos)
         if not cenarios:
             parser.error("pasta exemplos/ não encontrada (instale com pip install -e .) "
-                         "— ou passe um arquivo: inspect programa.py")
+                         "— ou passe um arquivo: xray programa.py")
     elif os.path.isfile(args.arquivo):
         cenarios = [cenario_do_arquivo(args.arquivo, args.max_passos)]
-    elif os.path.isfile(atalho):                   # `inspect avl` → exemplos/avl.py
+    elif os.path.isfile(atalho):                   # `xray avl` → exemplos/avl.py
         cenarios = [cenario_do_arquivo(atalho, args.max_passos)]
     else:
         parser.error(f"arquivo não encontrado: {args.arquivo}")
 
-    # importado aqui: `inspect --help` responde sem carregar o textual
+    # importado aqui: `xray --help` responde sem carregar o textual
     from xray.interface.app_textual import VisualizadorApp
     VisualizadorApp(cenarios).run()
