@@ -13,7 +13,7 @@ from pathlib import Path
 
 import pytest
 
-from inspetor.cli import cenario_do_arquivo
+from xray.cli import cenario_do_arquivo
 
 RAIZ = Path(__file__).parent.parent
 EXEMPLOS = sorted((RAIZ / "exemplos").glob("*.py"))

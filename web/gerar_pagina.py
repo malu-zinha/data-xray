@@ -23,7 +23,7 @@ import pyte
 RAIZ = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))  # pasta do projeto
 SRC = os.path.join(RAIZ, "src")
 sys.path.insert(0, SRC)                          # funciona mesmo sem instalar o pacote
-from inspetor.cli import cenarios_dos_exemplos      # noqa: E402  (só para saber quantos passos)
+from xray.cli import cenarios_dos_exemplos      # noqa: E402  (só para saber quantos passos)
 
 W, H = 132, 36                                   # tamanho do terminal virtual
 
@@ -45,7 +45,7 @@ def main():
         os.environ.update(TERM="xterm-256color", LANG="C.UTF-8", COLORTERM="truecolor",
                           PYTHONPATH=SRC)
         os.chdir(RAIZ)
-        os.execvp(sys.executable, [sys.executable, "-m", "inspetor"])
+        os.execvp(sys.executable, [sys.executable, "-m", "xray"])
 
     tela = pyte.Screen(W, H)                     # terminal emulado em memória
     fluxo = pyte.ByteStream(tela)                # interpreta os escapes que o app envia

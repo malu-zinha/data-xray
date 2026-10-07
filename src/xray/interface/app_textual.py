@@ -1,8 +1,8 @@
 """Interface textual: código executando à esquerda, memória desenhada à direita.
 
 Uso:
-    python -m inspetor                      # os exemplos, uma aba cada
-    python -m inspetor programa.py          # qualquer arquivo (ver cli.py)
+    python -m xray                      # os exemplos, uma aba cada
+    python -m xray programa.py          # qualquer arquivo (ver cli.py)
 Teclas: ← → aba · n/p próximo/anterior · espaço play/pausa · r reinicia · q sai
 """
 import linecache
@@ -15,9 +15,9 @@ from textual.binding import Binding
 from textual.containers import Horizontal, ScrollableContainer, Vertical
 from textual.widgets import Footer, Header, Static, Tab, Tabs
 
-from inspetor.cli import cenarios_dos_exemplos
+from xray.cli import cenarios_dos_exemplos
 
-from inspetor.nucleo.memoria import resumo
+from xray.nucleo.memoria import resumo
 
 # Tags do desenho.py → estilos rich (inclui "foco": variável do frame atual)
 ESTILOS = {

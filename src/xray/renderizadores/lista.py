@@ -2,8 +2,8 @@
 
 Os nomes dos campos são parâmetros; eles vêm da detecção.
 """
-from inspetor.nucleo.canvas import Canvas
-from inspetor.renderizadores.comum import centralizar, nomes_por_endereco, titulo
+from xray.nucleo.canvas import Canvas
+from xray.renderizadores.comum import centralizar, nomes_por_endereco, titulo
 
 SEM_ATRIBUTO = object()                   # marca "o atributo ainda não existe"
 LARGURA_NO = 15                           # caixa (10) + seta (5): distância entre nós

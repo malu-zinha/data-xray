@@ -5,8 +5,8 @@
     └─────┴─────┴─────┘
        0     1     2
 """
-from inspetor.nucleo.canvas import Canvas
-from inspetor.renderizadores.comum import (centralizar, indices_do_topo, largura_de_celula,
+from xray.nucleo.canvas import Canvas
+from xray.renderizadores.comum import (centralizar, indices_do_topo, largura_de_celula,
                                            nomes_por_endereco, texto, titulo)
 
 

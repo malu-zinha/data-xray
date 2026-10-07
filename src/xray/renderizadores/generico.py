@@ -18,10 +18,10 @@ desenho fique feio. O layout segue o Python Tutor:
 from collections import deque
 from dataclasses import dataclass, field
 
-from inspetor.nucleo.canvas import Canvas
-from inspetor.nucleo.diferenca import GLOBAIS, Destaques, conteudo
-from inspetor.nucleo.memoria import resumo_do_heap
-from inspetor.renderizadores.comum import centralizar
+from xray.nucleo.canvas import Canvas
+from xray.nucleo.diferenca import GLOBAIS, Destaques, conteudo
+from xray.nucleo.memoria import resumo_do_heap
+from xray.renderizadores.comum import centralizar
 
 MAX_OBJETOS = 60        # a partir daqui, objetos não são desenhados
 MAX_ITENS = 12          # itens por lista/dicionário/objeto

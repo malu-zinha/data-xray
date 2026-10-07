@@ -20,7 +20,7 @@ fluxo genérico deve mostrar a rotação tão bem quanto `estruturas/avl/cenario
 
 ## Etapa 1 — linha de comando para um arquivo qualquer ✅
 
-- `src/inspetor/cli.py`: `inspect caminho/programa.py` executa o arquivo com
+- `src/xray/cli.py`: `inspect caminho/programa.py` executa o arquivo com
   `runpy.run_path` sob o rastreador.
 - O filtro do rastreador passa a aceitar **o arquivo da usuária** (e, depois,
   módulos locais importados por ele), em vez de `estruturas/*/codigo.py`.

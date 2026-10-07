@@ -447,7 +447,7 @@ O histórico do desenvolvimento está em `docs/ROADMAP.md`.
 
 ## Estrutura do código
 
-O código fica em `src/inspetor/`.
+O código fica em `src/xray/`.
 
 | Arquivo | O quê |
 |---|---|

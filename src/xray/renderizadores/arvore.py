@@ -3,8 +3,8 @@
 Os campos de ligação são parâmetros; eles vêm da detecção
 (deteccao/formas.py), não do nome dos campos.
 """
-from inspetor.nucleo.canvas import Canvas, lado_a_lado
-from inspetor.renderizadores.comum import nomes_por_endereco, titulo
+from xray.nucleo.canvas import Canvas, lado_a_lado
+from xray.renderizadores.comum import nomes_por_endereco, titulo
 
 
 MAX_NIVEIS_CAIXAS = 6    # mais fundo que isso, volta ao desenho compacto (2 linhas por nível)

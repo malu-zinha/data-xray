@@ -7,10 +7,10 @@ from pathlib import Path
 
 import pytest
 
-from inspetor.cli import cenario_do_arquivo
-from inspetor.nucleo.heap import achatar, ref
-from inspetor.nucleo.memoria import resumo
-from inspetor.nucleo.rastreador import Passo
+from xray.cli import cenario_do_arquivo
+from xray.nucleo.heap import achatar, ref
+from xray.nucleo.memoria import resumo
+from xray.nucleo.rastreador import Passo
 
 RAIZ = Path(__file__).parent.parent
 
@@ -180,5 +180,5 @@ def test_resumo_de_objeto_que_aponta_para_si_mesmo():
 
 
 def test_nenhum_deepcopy_no_pacote():
-    fontes = (RAIZ / "src" / "inspetor").rglob("*.py")
+    fontes = (RAIZ / "src" / "xray").rglob("*.py")
     assert not [f for f in fontes if "deepcopy(" in f.read_text()]

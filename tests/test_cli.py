@@ -4,8 +4,8 @@ from pathlib import Path
 
 from textual.widgets import Static
 
-from inspetor.cli import cenario_do_arquivo
-from inspetor.interface.app_textual import VisualizadorApp
+from xray.cli import cenario_do_arquivo
+from xray.interface.app_textual import VisualizadorApp
 
 BUBBLE = Path(__file__).parent.parent / "exemplos" / "bubble.py"
 
@@ -21,7 +21,7 @@ def test_bubble_roda_do_comeco_ao_fim():
     c = cenario_do_arquivo(str(BUBBLE))
     assert c.passos and c.erro is None and not c.cortado
     assert c.passos[-1].vista.globais["numeros"] == [1, 2, 5, 7, 9]
-    # só linhas do próprio arquivo: nada do runpy nem do inspetor
+    # só linhas do próprio arquivo: nada do runpy nem do xray
     assert {q.funcao for p in c.passos for q in p.quadros} == {"<module>", "bubble_sort"}
 
 
@@ -133,8 +133,8 @@ def test_interface_sem_argumentos_abre_os_exemplos():
 
 def test_atalho_pelo_nome_do_exemplo(monkeypatch):
     abertos = []
-    monkeypatch.setattr("inspetor.interface.app_textual.VisualizadorApp.run",
+    monkeypatch.setattr("xray.interface.app_textual.VisualizadorApp.run",
                         lambda self: abertos.append(self.cenarios))
-    from inspetor.cli import main
+    from xray.cli import main
     main(["avl"])                                # = inspect exemplos/avl.py
     assert [c.nome for c in abertos[0]] == ["avl.py"]

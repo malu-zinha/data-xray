@@ -7,9 +7,9 @@ from pathlib import Path
 
 import pytest
 
-from inspetor.cli import cenario_do_arquivo
-from inspetor.deteccao.formas import detectar
-from inspetor.renderizadores.arvore import desenhar_arvore
+from xray.cli import cenario_do_arquivo
+from xray.deteccao.formas import detectar
+from xray.renderizadores.arvore import desenhar_arvore
 
 RAIZ = Path(__file__).parent.parent
 

@@ -9,8 +9,8 @@ from pathlib import Path
 
 import pytest
 
-from inspetor.cli import cenario_do_arquivo
-from inspetor.renderizadores.generico import MAX_ITENS, MAX_OBJETOS, desenhar, montar
+from xray.cli import cenario_do_arquivo
+from xray.renderizadores.generico import MAX_ITENS, MAX_OBJETOS, desenhar, montar
 
 RAIZ = Path(__file__).parent.parent
 EXEMPLOS = sorted((RAIZ / "exemplos").glob("*.py"))

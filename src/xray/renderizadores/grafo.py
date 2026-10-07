@@ -5,8 +5,8 @@
       B  1  ·  ·             C → [A]
       C  1  ·  ·
 """
-from inspetor.nucleo.canvas import Canvas
-from inspetor.renderizadores.comum import (nomes_por_endereco, texto, titulo, valores_do_topo,
+from xray.nucleo.canvas import Canvas
+from xray.renderizadores.comum import (nomes_por_endereco, texto, titulo, valores_do_topo,
                                        variaveis_do_topo)
 
 

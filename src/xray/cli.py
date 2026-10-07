@@ -11,13 +11,13 @@ import os
 import runpy
 import sys
 
-from inspetor.nucleo.cenario import Cenario
-from inspetor.nucleo.rastreador import filtro_arquivos
-from inspetor.renderizadores.automatico import Desenhista
+from xray.nucleo.cenario import Cenario
+from xray.nucleo.rastreador import filtro_arquivos
+from xray.renderizadores.automatico import Desenhista
 
 MAX_PASSOS = 2000                  # laços longos: a linha do tempo para aqui
 
-# exemplos/ fica na raiz do repositório (src/inspetor/cli.py → ../../exemplos);
+# exemplos/ fica na raiz do repositório (src/xray/cli.py → ../../exemplos);
 # existe quando o pacote foi instalado em modo editável (pip install -e .)
 PASTA_EXEMPLOS = os.path.join(os.path.dirname(os.path.abspath(__file__)),
                               os.pardir, os.pardir, "exemplos")
@@ -102,5 +102,5 @@ def main(argv=None):
         parser.error(f"arquivo não encontrado: {args.arquivo}")
 
     # importado aqui: `inspect --help` responde sem carregar o textual
-    from inspetor.interface.app_textual import VisualizadorApp
+    from xray.interface.app_textual import VisualizadorApp
     VisualizadorApp(cenarios).run()

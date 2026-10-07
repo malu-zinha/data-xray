@@ -9,7 +9,7 @@ from contextlib import redirect_stdout
 from dataclasses import dataclass, field
 from typing import Any, Callable
 
-from inspetor.nucleo.rastreador import rastrear
+from xray.nucleo.rastreador import rastrear
 
 
 @dataclass

@@ -6,8 +6,8 @@
     └─────┴─────┴─────┘
        ▲ ini       ▲ fim
 """
-from inspetor.nucleo.canvas import Canvas
-from inspetor.renderizadores.comum import centralizar, nomes_por_endereco, texto, titulo
+from xray.nucleo.canvas import Canvas
+from xray.renderizadores.comum import centralizar, nomes_por_endereco, texto, titulo
 
 
 

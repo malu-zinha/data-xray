@@ -16,7 +16,7 @@ web = ["pyte>=0.8"]          # só para gerar a página web
 dev = ["pytest>=8"]
 
 [project.scripts]
-inspect = "inspetor.cli:main"  # depois de instalar, basta digitar: inspect
+inspect = "xray.cli:main"  # depois de instalar, basta digitar: inspect
 
 [tool.setuptools.packages.find]
 where = ["src"]
